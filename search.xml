@@ -4,6 +4,114 @@
   
     
     <entry>
+      <title>微信小程序</title>
+      <link href="/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
+      <url>/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/</url>
+      
+        <content type="html"><![CDATA[<p><img src="/./%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/a0b367d22870a4acce84498e45683eb.png" alt="a0b367d22870a4acce84498e45683eb"></p><p><img src="/./%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/image-20240303231159260.png" alt="image-20240303231159260"></p><p><img src="/./%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/image-20240303232306999.png" alt="image-20240303232306999"><img src="/./%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/image-20240303235155286.png" alt="image-20240303235155286"><img src="/./%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/image-20240304200747951.png" alt="image-20240304200747951"></p><p><img src="/./%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/image-20240304200833309.png" alt="image-20240304200833309"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 微信小程序 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 微信小程序 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>SQL注入基础（2）</title>
+      <link href="/SQL%E6%B3%A8%E5%85%A5%E5%9F%BA%E7%A1%80%EF%BC%882%EF%BC%89/"/>
+      <url>/SQL%E6%B3%A8%E5%85%A5%E5%9F%BA%E7%A1%80%EF%BC%882%EF%BC%89/</url>
+      
+        <content type="html"><![CDATA[<h2 id="floor报错"><a href="#floor报错" class="headerlink" title="floor报错"></a>floor报错</h2><h3 id="floor报错涉及到的函数"><a href="#floor报错涉及到的函数" class="headerlink" title="floor报错涉及到的函数"></a>floor报错涉及到的函数</h3><p><strong>rand()</strong> :随机返回0~1间的小数。</p><p><strong>floor()</strong> :小数向下取整。</p><p><strong>celiling()</strong> :向上取整数。</p><p><strong>concat_ws()</strong> : 将括号内数据用第一个字段连接起来。</p><p><strong>as</strong> : 别名</p><p><strong>count()</strong> :汇总统计数量</p><p><strong>limit</strong> :这里用于显示指定行数</p><p>例如</p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?id<span class="operator">=</span><span class="number">0</span><span class="string">&#x27; union select 1,count(*),concat_ws(&#x27;</span><span class="operator">-</span><span class="string">&#x27;,(select concat(&#x27;</span><span class="operator">~</span><span class="string">&#x27;,id,username,&#x27;</span>:<span class="string">&#x27;password)form users limit 0,1),floor(rand(0)*2)) as a from information_schema.tables group by a --+</span></span><br></pre></td></tr></table></figure><h3 id="rand-函数"><a href="#rand-函数" class="headerlink" title="rand()函数"></a>rand()函数</h3><p><img src="/./SQL%E6%B3%A8%E5%85%A5%E5%9F%BA%E7%A1%80%EF%BC%882%EF%BC%89/work1.png" alt="work1"></p><h3 id="concat-ws-函数"><a href="#concat-ws-函数" class="headerlink" title="concat_ws()函数"></a>concat_ws()函数</h3><p><img src="/./SQL%E6%B3%A8%E5%85%A5%E5%9F%BA%E7%A1%80%EF%BC%882%EF%BC%89/work2.png" alt="work2"></p><h3 id="as别名，group-by分组，count-函数"><a href="#as别名，group-by分组，count-函数" class="headerlink" title="as别名，group by分组，count()函数"></a>as别名，group by分组，count()函数</h3><p><strong>group by</strong>分组用于后面统计数据</p><p>真正起作用的报错是**count()<strong>，利用</strong>count()**计算securiry-0 和 securiry-1 分别出现几次。</p><p><img src="/./SQL%E6%B3%A8%E5%85%A5%E5%9F%BA%E7%A1%80%EF%BC%882%EF%BC%89/work3.png" alt="work3"></p><h3 id="报错原因"><a href="#报错原因" class="headerlink" title="报错原因"></a><strong>报错原因</strong></h3><p><img src="/./SQL%E6%B3%A8%E5%85%A5%E5%9F%BA%E7%A1%80%EF%BC%882%EF%BC%89/work4.png" alt="work4"></p><h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><p><img src="/./SQL%E6%B3%A8%E5%85%A5%E5%9F%BA%E7%A1%80%EF%BC%882%EF%BC%89/work5.png" alt="work5"></p><p>当group_key不存在的时候，group跟rand说，你给的键值我这里没有，不能给你统计，现在我给你发一条指令，从这条指令起，下次你给我回复的我就当键值输入。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 网络安全 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> sql </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>选择排序对10个整数进行排序</title>
+      <link href="/%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F%E5%AF%B910%E4%B8%AA%E6%95%B4%E6%95%B0%E8%BF%9B%E8%A1%8C%E6%8E%92%E5%BA%8F/"/>
+      <url>/%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F%E5%AF%B910%E4%B8%AA%E6%95%B4%E6%95%B0%E8%BF%9B%E8%A1%8C%E6%8E%92%E5%BA%8F/</url>
+      
+        <content type="html"><![CDATA[<h2 id="选择排序对10个整数进行排序"><a href="#选择排序对10个整数进行排序" class="headerlink" title="选择排序对10个整数进行排序"></a>选择排序对10个整数进行排序</h2><h3 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h3><p>3、5、9、2、8、4、1、10、7、6</p><p>最终结果：1、2、3、4、5、6、7、8、9、10</p><h3 id="选择排序是什么？"><a href="#选择排序是什么？" class="headerlink" title="选择排序是什么？"></a>选择排序是什么？</h3><p>第一次排序1、5、9、2、8、4、3、10、7、6</p><p>第二次排序1、2、9、5、8、4、3、10、7、6</p><p> ……</p><p>1、2、3、4、5、6、7、8、9、10</p><p>3、5、9、2、8、4、1、10、7、6</p><p>首先会对3进行标记，然后与5比较，与9比较，与2比较时大于2，然后标记从3转移到2，2跟后面的数依次比较，与1比较时小于1，然后给1一个标记，在与后面比较，最后发现1是最小的数，然后把1与第一个位置的数进行换位，接着从第二个数在进行选择排序。</p><h3 id="代码块"><a href="#代码块" class="headerlink" title="代码块"></a>代码块</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line"><span class="type">int</span> number[<span class="number">10</span>] = &#123; <span class="number">3</span>,<span class="number">5</span>,<span class="number">9</span>,<span class="number">2</span>,<span class="number">8</span>,<span class="number">4</span>,<span class="number">1</span>,<span class="number">10</span>,<span class="number">7</span>,<span class="number">6</span> &#125;;</span><br><span class="line"><span class="type">int</span> flag = <span class="number">0</span>;<span class="comment">//标记</span></span><br><span class="line"><span class="type">int</span> exchange = <span class="number">0</span>;<span class="comment">//交换</span></span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++)</span><br><span class="line">&#123;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot; %d&quot;</span>, number[i]);</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++)</span><br><span class="line">&#123;</span><br><span class="line">flag = i; <span class="comment">//首先把标记放在第一个位置</span></span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> j = i + <span class="number">1</span>; j &lt; <span class="number">10</span>; j++)<span class="comment">//然后第一个数与第一个后面的数依次开始进行比较</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">if</span> (number[flag]&gt;=number[j])<span class="comment">//如果标记的数大于比较的数，那比较数就被标记，接着继续往后继续比较。</span></span><br><span class="line">&#123;</span><br><span class="line">flag = j;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span> (flag != i)<span class="comment">//如果标记不在第一个位置，就把标记的数与第一个数的位置进行交换</span></span><br><span class="line">&#123;</span><br><span class="line">exchange = number[flag];</span><br><span class="line">number[flag] = number[i];</span><br><span class="line">number[i] = exchange;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//下面是循环遍历结果</span></span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++)</span><br><span class="line">&#123;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot; %d&quot;</span>,number[i]);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 基础算法 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> C语言 </tag>
+            
+            <tag> 基础算法 </tag>
+            
+            <tag> 选择排序 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>二维数组输出杨辉三角</title>
+      <link href="/%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E8%BE%93%E5%87%BA%E6%9D%A8%E8%BE%89%E4%B8%89%E8%A7%92/"/>
+      <url>/%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E8%BE%93%E5%87%BA%E6%9D%A8%E8%BE%89%E4%B8%89%E8%A7%92/</url>
+      
+        <content type="html"><![CDATA[<h2 id="利用二维数组输出杨辉三角"><a href="#利用二维数组输出杨辉三角" class="headerlink" title="利用二维数组输出杨辉三角"></a>利用二维数组输出杨辉三角</h2><h3 id="输出结果"><a href="#输出结果" class="headerlink" title="输出结果"></a>输出结果</h3><p><img src="/./%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E8%BE%93%E5%87%BA%E6%9D%A8%E8%BE%89%E4%B8%89%E8%A7%92/work2.png" alt="work2"></p><h3 id="二维数组"><a href="#二维数组" class="headerlink" title="二维数组"></a>二维数组</h3><p><img src="/./%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E8%BE%93%E5%87%BA%E6%9D%A8%E8%BE%89%E4%B8%89%E8%A7%92/work1.png" alt="work1"></p><h3 id="代码块"><a href="#代码块" class="headerlink" title="代码块"></a>代码块</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line"><span class="type">int</span> a[<span class="number">10</span>][<span class="number">10</span>];</span><br><span class="line"><span class="keyword">for</span> ( <span class="type">int</span> i = <span class="number">0</span>;  i &lt;<span class="number">10</span> ; i++)</span><br><span class="line">&#123;</span><br><span class="line">a[i][<span class="number">0</span>] = <span class="number">1</span>;<span class="comment">//第一列全是1</span></span><br><span class="line">a[i][i] = <span class="number">1</span>;<span class="comment">//每一列最后一行全是1</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">2</span>; i &lt; <span class="number">10</span>; i++)<span class="comment">//也就是第三行开始，第三行第二个数 = 第二行第一个数+地二行第二个数，这里i=2因为第一二行全是1。</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">1</span>; j &lt; i; j++)<span class="comment">//a[i][j]中，j是从0开始计数，所以第三行开始即i=2，因为第三行第三列在第一个for中被赋值为1，j&lt;i就限定为第三行第二列。</span></span><br><span class="line">&#123;</span><br><span class="line">a[i][j] = a[i - <span class="number">1</span>][j - <span class="number">1</span>] + a[i - <span class="number">1</span>][j]; <span class="comment">//第三行第二个数 = 第二行第一个数 + 地二行第二个数</span></span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//下面这个for用来遍历数据</span></span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++)</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt;= i; j++) </span><br><span class="line">&#123;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%5d&quot;</span>,a[i][j]);</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);<span class="comment">//每打一行就要换行</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 基础算法 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> C语言 </tag>
+            
+            <tag> 基础算法 </tag>
+            
+            <tag> 二维数组 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>SQL注入基础(1)</title>
       <link href="/sql%E6%B3%A8%E5%85%A5/"/>
       <url>/sql%E6%B3%A8%E5%85%A5/</url>
